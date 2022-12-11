@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title> Formulario de Acceso </title>    
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <!-- Link hacia el archivo de estilos css -->
+        <!-- link rel="stylesheet" href="css/login.css"> -->
+        <link href="../static/assets/css/login.css" rel="stylesheet">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+    
+        <div id="contenedor" lang="es">
+            
+            <div id="contenedorcentrado" lang="es">
+                <div id="login">
+            
+                  <form method="post" lang="es" >{% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-grid"><button class="btn btn-primary btn-xl" type="submit">Enviar</button></div>
+                </form>
+
+                
+                </div>
+                <div id="derecho">
+                    <div class="titulo">
+                        Crear Usuario
+                    </div>
+                    <hr>
+                   
+
+                     <div class="pie-form">
+                        <h3>Cumple todos los requisitos para poder crear tu nuevo usuario</h3>
+                        
+                        <hr>
+                        
+                        <h2>
+                            <a href="{% url 'index' %}">«« Volver</a>
+                            <a href="/mostrariniciosesion"> Desconectate »» </a>
+                        </h2>
+                
+
+                     
+                    
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

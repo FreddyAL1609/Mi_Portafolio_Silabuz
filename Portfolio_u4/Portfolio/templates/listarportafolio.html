@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title> Formulario de Acceso </title>    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Videojuegos & Desarrollo">
+        <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
+        <meta name="keywords" content="login,formulariode acceso html">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <!-- Link hacia el archivo de estilos css -->
+        <!-- link rel="stylesheet" href="css/login.css"> -->
+        <link href="../static/assets/css/login.css" rel="stylesheet">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+    
+        <div id="contenedor">
+            
+            <div id="contenedorcentrado">
+                <div id="login">
+
+                  <form method="post">{% csrf_token %}
+                    {% for c in object_list %}
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ c.foto }}" title="{{ c.titulo }}">
+                        <img class="img-fluid" src="{{ c.foto }}" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-name">Titulo: {{ c.titulo }}</div>
+                            <div class="project-name">Descripción: {{ c.descripcion }}</div>
+                            <div class="project-name">Etiqueta: {{ c.etiqueta }}</div>
+                            <div class="project-name">Url: {{ c.url }}</div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                </form>
+
+                    
+                </div>
+                <div id="derecho">
+                    <div class="titulo">
+                        Lista de Portafolios
+                    </div>
+                    <hr>
+                   
+
+                     <div class="pie-form">
+                
+                        <h3>
+                        <a href="/crearportafolio"> Crear Portafolio</a>
+                        </h3>
+                        <hr>
+                        
+                    
+                
+                        <h2>
+                            <a href="{% url 'index' %}">«« Volver</a>
+                            <a href="/mostrariniciosesion"> Desconectate »» </a>
+                        </h2>
+                     
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
