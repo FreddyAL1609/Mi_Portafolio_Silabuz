@@ -5,7 +5,7 @@
         
         <meta charset="utf-8">
         
-        <title> Formulario de Acceso </title>    
+        <title> Listar Portafolio </title>    
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -38,20 +38,49 @@
 
                   <form method="post">{% csrf_token %}
                     {% for c in object_list %}
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-lg-4 col-sm-6" style="color: black;font-size:16px; font-family: Georgia, 'Times New Roman', Times, serif;" >
                     <a class="portfolio-box" href="{{ c.foto }}" title="{{ c.titulo }}">
-                        <img class="img-fluid" src="{{ c.foto }}" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-name">Titulo: {{ c.titulo }}</div>
-                            <div class="project-name">Descripción: {{ c.descripcion }}</div>
-                            <div class="project-name">Etiqueta: {{ c.etiqueta }}</div>
-                            <div class="project-name">Url: {{ c.url }}</div>
-                        </div>
+
+                        <img  class="img-fluid" width="150px" height="150px" src="{{ c.foto }}" alt="..." />
+                       <br>
+                        <a style="text-decoration:none">Titulo: {{ c.titulo }} <br>
+
+                            Descripción: {{ c.descripcion }} <br>
+                            Etiqueta: {{ c.etiqueta }} <br>
+                        </a>
+                        <a href="{{ c.url }}">Url: 
+                            
+                            {{ c.url }}</a>
+                        
+                            <hr>
+                      
+
+
+
                     </a>
                 </div>
                 {% endfor %}
                 </form>
+                <br>
+                
 
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; Primero</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                        {% endif %}
+                
+                        <span class="current" style="color: black;">
+                            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">Ultimo &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
                     
                 </div>
                 <div id="derecho">
@@ -64,7 +93,7 @@
                      <div class="pie-form">
                 
                         <h3>
-                        <a href="/crearportafolio"> Crear Portafolio</a>
+                        <a href="/crearportafolio" style="color: black; font-size: 22px;"> Crear Portafolio</a>
                         </h3>
                         <hr>
                         

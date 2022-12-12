@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.contrib messages
+"""from django.contrib messages"""
 
 # Create your views here.
 
@@ -8,4 +8,8 @@ from django.contrib messages
 
 class PortafolioP(TemplateView):
     template_name="index.html"
+
+
+class PortafolioD(TemplateView):
+    template_name="portfolio-details.html"
     

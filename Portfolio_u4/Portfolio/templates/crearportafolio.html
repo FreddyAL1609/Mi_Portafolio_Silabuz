@@ -30,14 +30,9 @@
     </head>
     
     <body>
-       
-       
-    
+        
         <div id="contenedor">
-            <p>
-                {{user.id}}
-                hollaaaa
-            </p>
+          
             <div id="contenedorcentrado">
                 <div id="login">
                     <form action="" method="post">{% csrf_token %}
@@ -47,13 +42,13 @@
                     
                 </div>
                 <div id="derecho">
-                    <div class="titulo">
-                        Agregar Nuevo Portafolio
+                    <div class="titulo" >
+                        Agregar Portafolio
                     </div>
                     <hr>
                    
                      <div class="pie-form">
-                        <h2>Aqui debes agregar los proyectos para tu portafolio.</h2>
+                        <h2 style="color: black; font-size: 22px;">Aqui debes agregar los proyectos para tu portafolio.</h2>
                       
                         <hr>
 
@@ -69,14 +64,13 @@
                 </div>
             </div>
         </div>
-        <script
-        src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-        crossorigin="anonymous"></script>
-        <script>
-            // A $( document ).ready() block.
-            $( document ).ready(function() {
-            document.getElementById('autor').value = {{user.id}};
-        </script>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+        $(document).ready(function() {
+            document.getElementById("autor").value = {{user.id}};
+        });
+</script>
+
+
     </body>
 </html>

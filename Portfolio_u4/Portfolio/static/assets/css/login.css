@@ -9,6 +9,14 @@ body {
     background-color: #5f6769;
 }
 
+/* 
+#img-fluid{
+    width: 200px;
+    height: 200px;
+}
+
+
+
 /* efectos para el contenedor de pantalla completa */
 #contenedor {
     display: flex;
@@ -61,7 +69,7 @@ body {
 #login {
     width: 100%;
     max-width: 400px;
-    min-width: 400px;
+    min-width: 500px;
     padding: 30px 30px 50px 30px;
     background-color: #719192;
     
@@ -84,7 +92,7 @@ body {
     font-family: 'Overpass', sans-serif;
     font-size: 120%;
     color:#3c4245;
-    
+    margin-left: 22px;
     margin-top: 15px;
 }
 
@@ -94,9 +102,29 @@ body {
     color: #1b262c;
     
     display: block;
-    width: 100%;
+    width: 80%;
     height: 40px;
     
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    
+    border: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+
+#login textarea {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    
+    display: block;
+    width: 80%;
+    height: 140px;
+    margin-left: 20px;
     margin-bottom: 10px;
     padding: 5px 5px 5px 10px;
     
@@ -107,6 +135,9 @@ body {
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
 }
+
+
+
 
 #login select{
     font-family: 'Overpass', sans-serif;
@@ -138,10 +169,12 @@ body {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color:#1b262c;
-    width: 100%;
+    width: 35%;
     height: 40px;
     border: none;
-    
+    margin-left: 130px;
+    font-weight: bold;
+    font-size: larger;
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
@@ -179,10 +212,17 @@ body {
 .titulo {
     font-size: 300%;
     color:#dfcdc3;
+    text-decoration: none;
 }
 
 .logo-empresa img {
     width: 60%;
+}
+
+
+
+a{
+    text-decoration: none;
 }
 
 hr {
@@ -198,7 +238,7 @@ hr {
 
 .pie-form a {
     display: block;
-    text-decoration: none;
+
     color: #dfcdc3;
     margin-bottom: 3px;
 }
@@ -236,6 +276,7 @@ hr {
         padding: 30px;
         box-sizing: border-box;
     }
+    
     
     #login {
         margin: 0 auto;

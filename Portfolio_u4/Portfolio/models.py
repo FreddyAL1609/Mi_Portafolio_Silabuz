@@ -4,11 +4,11 @@ from django.db import models
 # Create your models here.
 class portafolio(models.Model):
     autor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,)
-    foto = models.URLField(max_length=100)
+    foto = models.URLField(max_length=150)
     titulo = models.CharField(max_length=50)
     descripcion = models.TextField(max_length=100)
     etiqueta = models.CharField(max_length=50)
-    url = models.URLField(max_length=100)
+    url = models.URLField(max_length=150)
 
     def __str__(self):
         return self.titulo

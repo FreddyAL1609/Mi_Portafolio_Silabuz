@@ -3,7 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
 from .models import portafolio
 from .forms import portafolioforms, registrofroms
-from django.contrib messages
+"""from django.contrib messages"""
 
 from django.shortcuts import render
 from ipware import get_client_ip
@@ -17,6 +17,10 @@ import sqlite3
 
 class PortafolioP(TemplateView):
     template_name = "index.html"
+
+
+class PortafolioD(TemplateView):
+    template_name = "portfolio-details.html"
 
 # Create your views here.
 
@@ -39,7 +43,7 @@ class mostrariniciosesion(LoginView):
 class listarportafolio(ListView):
     model = portafolio
     template_name = ('listarportafolio.html')
-    paginate_by=4
+    paginate_by=2
     def get_queryset(self, *args, **kwargs):
         lista = portafolio.objects.filter(autor=self.request.user)
         return lista

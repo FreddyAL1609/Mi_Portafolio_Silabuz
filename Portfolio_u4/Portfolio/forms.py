@@ -9,7 +9,15 @@ class portafolioforms(forms.ModelForm):
         model = portafolio
         fields = ['autor', 'foto', 'titulo', 'descripcion', 'etiqueta', 'url']
         
-   
+        widgets = {
+            'autor': forms.TextInput(
+                attrs = {
+
+                    'id': 'autor',
+                    'type': 'hidden',
+                }
+            ),
+        }
         
 class registrofroms(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Enter a valid email address')
